@@ -67,11 +67,11 @@ var ProjectsContainer = React.createClass({
       <div>
         <h2> Project List </h2>
 
-        <ProjectCost projects={this.state.projects}/>
-
         <ProjectTable projects={this.state.projects} parentUpdateProject={this.parentUpdateProject}/>
 
         <NewProjectForm parentProjectSubmit={this.parentProjectSubmit}/>
+
+        <ProjectCost projects={this.state.projects}/>
 
       </div>
     )

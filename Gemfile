@@ -33,6 +33,8 @@ gem 'haml-rails'
 
 gem 'react-rails'
 
+gem 'react-rails-hot-loader'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

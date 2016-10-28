@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.text :description
-      t.decimal :project_cost, precision: 8, scale: 2
+      t.integer :time_estimate
 
       t.timestamps null: false
     end

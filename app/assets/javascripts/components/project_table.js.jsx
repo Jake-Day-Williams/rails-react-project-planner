@@ -9,7 +9,7 @@ var ProjectTable = React.createClass({
             id={project.id}
             name={project.name}
             description={project.description}
-            project_cost={project.project_cost}
+            project_cost={project.time_estimate}
             parentUpdateProject={this.props.parentUpdateProject}/>
         );
       }.bind(this))

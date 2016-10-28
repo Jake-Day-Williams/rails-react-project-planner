@@ -2,11 +2,11 @@ var NewProjectForm = React.createClass({
 
 
   getInitialState: function(){
-    return{name: "", description: "", project_cost: "", formErrors: {}}
+    return{name: "", description: "", time_estimate: "", formErrors: {}}
   },
 
   resetState: function(){
-    this.setState({name: "", description: "", project_cost: ""})
+    this.setState({name: "", description: "", time_estimate: ""})
   },
 
   handleValidationError: function(formErrorObj){
@@ -19,7 +19,7 @@ var NewProjectForm = React.createClass({
     e.preventDefault()
 
     this.props.parentProjectSubmit(
-      {project: {name: this.state.name, description: this.state.description, project_cost: this.state.project_cost}},
+      {project: {name: this.state.name, description: this.state.description, time_estimate: this.state.time_estimate}},
       this.resetState,
       this.handleValidationError
     );
@@ -35,8 +35,8 @@ var NewProjectForm = React.createClass({
     this.setState({description: e.target.value})
   },
 
-  handleProjectCostChange: function(e){
-    this.setState({project_cost: e.target.value})
+  handleTimeEstimateChange: function(e){
+    this.setState({time_estimate: e.target.value})
   },
 
 
@@ -120,7 +120,7 @@ var NewProjectForm = React.createClass({
   },
 
 
-  renderProjectCostField: function(){
+  renderTimeEstimateField: function(){
 
     return(
       <div className="row">
@@ -130,15 +130,15 @@ var NewProjectForm = React.createClass({
           <div className="form-group">
 
             <input
-              name="project[project_cost]"
+              name="project[time_estimate]"
               type="number"
               placeholder="Project Cost"
-              value={this.state.project_cost}
-              onChange={this.handleProjectCostChange}
+              value={this.state.time_estimate}
+              onChange={this.handleTimeEstimateChange}
               className="numeric decimal form-control"
             />
 
-            {this.renderFieldErrors("project_cost")}
+            {this.renderFieldErrors("time_estimate")}
 
           </div>
 
@@ -164,7 +164,7 @@ var NewProjectForm = React.createClass({
 
           {this.renderProjectDescriptionField()}
 
-          {this.renderProjectCostField()}
+          {this.renderTimeEstimateField()}
 
           <div className="row">
             <div className="col-sm-4">

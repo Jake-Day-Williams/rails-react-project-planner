@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20161023222755) do
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "project_cost", precision: 8, scale: 2
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.integer  "time_estimate"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

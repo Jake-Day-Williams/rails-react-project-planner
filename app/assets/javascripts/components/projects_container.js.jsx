@@ -71,7 +71,7 @@ var ProjectsContainer = React.createClass({
 
         <NewProjectForm parentProjectSubmit={this.parentProjectSubmit}/>
 
-        <ProjectCost projects={this.state.projects}/>
+        <TimeEstimate projects={this.state.projects}/>
 
       </div>
     )

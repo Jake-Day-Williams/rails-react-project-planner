@@ -1,10 +1,10 @@
-var ProjectCost = React.createClass({
+var ProjectTime = React.createClass({
 
-  calculateCost: function(){
-    totalCost = 0;
+  calculateTime: function(){
+    totalTime = 0;
 
     this.props.projects.map(function(project){
-      cost = project.project_cost == null || project.project_cost == undefined ? 0 : parseFloat(project.project_cost)
+      time = project.time_estimate == null || project.time_estimate == undefined ? 0 : parseFloat(project.time_estimate)
       totalCost += cost
     })
 
@@ -18,7 +18,7 @@ var ProjectCost = React.createClass({
     return(
       <div style={{marginTop: "30px"}}>
         <h4>
-          Total Project Cost
+          Total Time Scheduled
         </h4>
         <h4>
           {this.calculateCost()}

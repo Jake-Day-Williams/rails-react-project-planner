@@ -1,7 +1,7 @@
 var ProjectRow = React.createClass({
 
   getInitialState: function(){
-    return ( {id: this.props.id, name: this.props.name, description: this.props.description, project_cost: this.props.project_cost, edit: false, formErrors: {}} )
+    return ( {id: this.props.id, name: this.props.name, description: this.props.description, time_estimate: this.props.time_estimate, edit: false, formErrors: {}} )
   },
 
   editProject: function(){
@@ -10,7 +10,7 @@ var ProjectRow = React.createClass({
 
   cancelEdit: function(e){
     e.preventDefault();
-    this.setState({edit: false, name: this.props.name, description: this.props.description, project_cost: this.props.project_cost, formErrors: {}});
+    this.setState({edit: false, name: this.props.name, description: this.props.description, time_estimate: this.props.time_estimate, formErrors: {}});
   },
 
   handleNameChange: function(e){
@@ -21,8 +21,8 @@ var ProjectRow = React.createClass({
     this.setState({description: e.target.value});
   },
 
-  handleProjectCostChange: function(e){
-    this.setState({project_cost: e.target.value});
+  handleTimeEstimateChange: function(e){
+    this.setState({time_estimate: e.target.value});
   },
 
   handleValidationErrors: function(formErrorObject){
@@ -36,7 +36,7 @@ var ProjectRow = React.createClass({
   updateProject: function(e){
     e.preventDefault();
     this.props.parentUpdateProject(
-      {project: {id: this.state.id, name: this.state.name, description: this.state.description, project_cost: this.state.project_cost}},
+      {project: {id: this.state.id, name: this.state.name, description: this.state.description, time_estimate: this.state.time_estimate}},
       this.handleUpdate,
       this.handleValidationErrors
     );
@@ -106,24 +106,24 @@ var ProjectRow = React.createClass({
     );
   },
 
-  renderProjectCostEditFields: function(){
+  renderTimeEstimateEditFields: function(){
 
-    var formGroupClass = this.state.formErrors["project_cost"] ? "form-group has-error" : "form-group"
+    var formGroupClass = this.state.formErrors["time_estimate"] ? "form-group has-error" : "form-group"
 
     return(
 
       <div className={formGroupClass}>
 
         <input
-          name="project[project_cost]"
+          name="project[time_estimate]"
           type="number"
-          placeholder="Project Cost"
-          value={this.state.project_cost}
-          onChange={this.handleProjectCostChange}
+          placeholder="Time Estimate"
+          value={this.state.time_estimate}
+          onChange={this.handleTimeEstimateChange}
           className="numeric decimal form-control"
         />
 
-        {this.renderFieldErrors("project_cost")}
+        {this.renderFieldErrors("time_estimate")}
 
       </div>
 
@@ -147,7 +147,7 @@ var ProjectRow = React.createClass({
           </div>
 
           <div className="col-sm-2">
-            {this.state.project_cost}
+            {this.state.time_estimate}
           </div>
 
           <div className="col-sm-2">
@@ -177,7 +177,7 @@ var ProjectRow = React.createClass({
             </div>
 
             <div className="col-sm-2">
-              {this.renderProjectCostEditFields()}
+              {this.renderTimeEstimateEditFields()}
             </div>
 
             <div className="col-sm-2">

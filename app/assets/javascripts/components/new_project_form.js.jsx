@@ -67,7 +67,7 @@ var NewProjectForm = React.createClass({
 
       <div className="row">
 
-        <div className="col-sm-4">
+        <div className="col-sm-12">
 
           <div className="form-group">
 
@@ -97,7 +97,7 @@ var NewProjectForm = React.createClass({
     return(
       <div className="row">
 
-        <div className="col-sm-4">
+        <div className="col-sm-12">
 
           <div className="form-group">
 
@@ -125,14 +125,14 @@ var NewProjectForm = React.createClass({
     return(
       <div className="row">
 
-        <div className="col-sm-4">
+        <div className="col-sm-12">
 
           <div className="form-group">
 
             <input
               name="project[time_estimate]"
               type="number"
-              placeholder="Project Cost"
+              placeholder="Estimated Time Needed"
               value={this.state.time_estimate}
               onChange={this.handleTimeEstimateChange}
               className="numeric decimal form-control"
@@ -153,7 +153,9 @@ var NewProjectForm = React.createClass({
   render:function() {
 
     return(
-      <div>
+
+      <div className="col-sm-6">
+
         <h4 style={{marginTop: "50px"}}> Create New Project </h4>
 
         <form style={{marginTop: "30px"}} onSubmit={this.newProjectSubmit}>
@@ -166,11 +168,7 @@ var NewProjectForm = React.createClass({
 
           {this.renderTimeEstimateField()}
 
-          <div className="row">
-            <div className="col-sm-4">
-              <input type="submit" value="Save" className="btn btn-primary" />
-            </div>
-          </div>
+          <input type="submit" value="Save" className="btn btn-primary" />
 
         </form>
 

@@ -147,8 +147,14 @@ var ProjectRow = React.createClass({
           </div>
 
           <div className="col-sm-2">
-            {this.state.time_estimate}
+            {this.state.time_estimate}m
           </div>
+
+          {/* <div className="col-sm-2">
+            <button className='btn btn-sm btn-primary' onClick={this.startCount}>
+            Start
+            </button>
+          </div> */}
 
           <div className="col-sm-2">
             <button className='btn btn-sm btn-primary' onClick={this.editProject}>

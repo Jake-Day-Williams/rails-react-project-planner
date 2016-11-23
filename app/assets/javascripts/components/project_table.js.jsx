@@ -9,7 +9,7 @@ var ProjectTable = React.createClass({
             id={project.id}
             name={project.name}
             description={project.description}
-            project_cost={project.time_estimate}
+            time_estimate={project.time_estimate}
             parentUpdateProject={this.props.parentUpdateProject}/>
         );
       }.bind(this))
@@ -22,21 +22,18 @@ var ProjectTable = React.createClass({
     return(
       <div>
 
-        <div className="row" style={{marginTop: "50px"}}>
+        <div className="row" style={{fontSize: "18", fontWeight: "bold", marginTop: "50px"}}>
 
-          <div className="col-sm-2" style={{fontWeight: "bold"}}>
-            Name
+          <div className="col-sm-2">
+            Project
           </div>
 
-          <div className="col-sm-4" style={{fontWeight: "bold"}}>
+          <div className="col-sm-4">
             Description
           </div>
 
-          <div className="col-sm-2" style={{fontWeight: "bold"}}>
-            Time Estimate
-          </div>
-
           <div className="col-sm-2">
+            Time
           </div>
 
         </div>
